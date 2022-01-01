@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = [];
+        let sortedArr = [...arr].sort((a, b) => b - a);
+        console.log(arr);
+        let sortedArr2 = arr.sort((a, b) => b - a);
+        console.log(arr);
+        arr.forEach((item) => answer.push(sortedArr.indexOf(item) + 1));
+        return answer;
+      }
+
+      let arr = [87, 89, 92, 100, 76];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
