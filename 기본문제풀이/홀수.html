@@ -1,17 +1,24 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(arr){
-                let answer=[];
-                
-                return answer;
-            }
-            arr=[12, 77, 38, 41, 53, 92, 85];
-            console.log(solution(arr));
-        </script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = [];
+        let odds = [];
+        arr.forEach((item) => (item % 2 === 1 ? odds.push(item) : null));
+        odds.sort((a, b) => a - b);
+        const reducer = (accumulator, curr) => accumulator + curr;
+        const sum = odds.reduce(reducer);
+        const min = odds[0];
+        answer.push(sum);
+        answer.push(min);
+        return answer;
+      }
+      arr = [12, 77, 38, 41, 53, 92, 85];
+      console.log(solution(arr));
+    </script>
+  </body>
 </html>
