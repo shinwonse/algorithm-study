@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+        s.length % 2 !== 0
+          ? (answer = s.slice(
+              Math.ceil(s.length / 2) - 1,
+              Math.ceil(s.length / 2)
+            ))
+          : (answer = s.slice(s.length / 2 - 1, s.length / 2 + 1));
+        return answer;
+      }
+      console.log(solution("studya"));
+    </script>
+  </body>
+</html>
