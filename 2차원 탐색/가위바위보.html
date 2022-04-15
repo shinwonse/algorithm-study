@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b) {
+        let answer = "";
+        let scissor = 1,
+          rock = 2,
+          paper = 3;
+        for (i = 0; i < a.length; i++) {
+          if (
+            (a[i] === scissor && b[i] === paper) ||
+            (a[i] === rock && b[i] === scissor) ||
+            (a[i] === paper && b[i] === rock)
+          ) {
+            answer += "A";
+          } else if (a[i] === b[i]) {
+            answer += "D";
+          } else answer += "B";
+        }
+        return answer;
+      }
+
+      let a = [2, 3, 3, 1, 3];
+      let b = [1, 1, 2, 2, 3];
+      console.log(solution(a, b));
+    </script>
+  </body>
+</html>
