@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer,
+          rowSum,
+          columnSum,
+          crossSum,
+          tempSum1,
+          tempSum2 = 0;
+
+        // rowSum 구하기
+        arr.forEach((arrItem) => {
+          rowSum < arrItem.reduce((acc, cur) => acc + cur)
+            ? (rowSum = arrItem.reduce((acc, cur) => acc + cur))
+            : null;
+        });
+        // columnSum 구하기
+        for (let i = 0; i < arr.length; i++) {
+          let tempSum = 0;
+          for (let j = 0; j < arr.length; j++) {
+            tempSum += arr[j][i];
+            columnSum < tempSum ? (columnSum = tempSum) : null;
+          }
+        }
+        // crossSum 구하기
+        for (let i = 0; i < arr.length; i++) {
+          tempSum1 += arr[i][i];
+          tempSum2 += arr[arr.length - i - 1][arr.length - i - 1];
+        }
+        tempSum1 > tempSum2 ? (crossSum = tempSum1) : (crossSum = tempSum2);
+
+        rowSum > columnSum ? (answer = rowSum) : (answer = columnSum);
+        crossSum > answer ? (answer = crossSum) : null;
+        return answer;
+      }
+
+      let arr = [
+        [10, 13, 10, 12, 15],
+        [12, 39, 30, 23, 11],
+        [11, 25, 50, 53, 15],
+        [19, 27, 29, 37, 27],
+        [19, 13, 30, 13, 19],
+      ];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
