@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let answer = 0;
+        let temp = [];
+        let sumArr = [];
+        let maxIndexArr = [];
+        let ansArr = [];
+        const reducer = (acc, cur) => parseInt(acc) + parseInt(cur);
+        for (let x of arr) {
+          temp.push(x.toString().split(""));
+        }
+        temp.forEach((array) => sumArr.push(array.reduce(reducer)));
+        for (let i = 0; i < sumArr.length; i++) {
+          sumArr[i] === Math.max(...sumArr) ? maxIndexArr.push(i) : null;
+        }
+        for (let x of maxIndexArr) {
+          ansArr.push(arr[x]);
+        }
+        return Math.max(...ansArr);
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html>
