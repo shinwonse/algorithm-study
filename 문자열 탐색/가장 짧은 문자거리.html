@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer = [];
+        for (let i = 0; i < s.length; i++) {
+          Math.abs(s.lastIndexOf(t, i + 1) - i) <=
+          Math.abs(s.indexOf(t, i + 1) - i)
+            ? answer.push(Math.abs(s.lastIndexOf(t, i + 1) - i))
+            : answer.push(Math.abs(s.indexOf(t, i + 1) - i));
+        }
+        return answer;
+      }
+
+      let str = "teachermode";
+      console.log(solution(str, "e"));
+    </script>
+  </body>
+</html>
