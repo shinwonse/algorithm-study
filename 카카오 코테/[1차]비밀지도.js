@@ -16,6 +16,5 @@ function solution(n, arr1, arr2) {
     }
     ansArr.push(temp);
   }
-  console.log(ansArr);
   return ansArr.map((ans) => ans.join(""));
 }
